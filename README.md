@@ -4,7 +4,7 @@ A browser-based Rock Paper Scissors game built with vanilla HTML, CSS and JavaSc
  
 **Live:** [http://89.167.40.206](http://89.167.40.206)
 
-![Rock Paper Scissors](assets/screenshot.png)
+![Rock Paper Scissors](assets/Screenshot.png)
  
 ## Features
  
