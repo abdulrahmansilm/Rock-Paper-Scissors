@@ -11,7 +11,7 @@ A browser-based Rock Paper Scissors game built with vanilla HTML, CSS and JavaSc
 - Play against the computer
 - Score tracking (Wins, Losses, Ties)
 - Score persists across sessions via `localStorage`
-- Hosted on a Hetzner VPS with Nginx
+- Hosted by me
 ## Tech Stack
  
 `HTML` `CSS` `JavaScript`
