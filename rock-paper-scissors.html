@@ -4,75 +4,21 @@
   <head>
     <title>Rock Paper Scissors</title>
 
-    <style>
-      body {
-        background-color: rgb(25, 25, 25);
-        color: white;
-        font-family: Arial;
-      }
-      .title {
-        font-weight: bold;
-        font-size: 30px;
-      }
-      .outputResult {
-        font-weight: bold;
-        font-size: 25px;
-        margin-top: 50px;
-      }
-
-      .move-icon {
-        height: 50px;
-      }
-
-      .move-button {
-        cursor: pointer;
-        background-color: transparent;
-        border: 3px solid white;
-        width: 120px;
-        height: 120px;
-        border-radius: 60px;
-        margin-right: 10px;
-      }
-
-      .reset-button {
-        padding: 7px 15px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      .outputScore {
-        margin-top: 50px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/rock-paper-scissors.css" />
   </head>
 
   <body>
     <p class="title">Rock Paper Scissors</p>
 
-    <button
-      class="move-button"
-      onclick="
-        playGame('Rock');
-      "
-    >
-      <img src="rock-emoji.png" class="move-icon" />
+    <button class="move-button" onclick="playGame('Rock')">
+      <img src="assets/rock-emoji.png" class="move-icon" />
     </button>
 
-    <button
-      class="move-button"
-      onclick="
-        playGame('Paper');
-      "
-    >
-      <img src="paper-emoji.png" class="move-icon" />
+    <button class="move-button" onclick="playGame('Paper')">
+      <img src="assets/paper-emoji.png" class="move-icon" />
     </button>
-    <button
-      class="move-button"
-      onclick="
-        playGame('Scissors');
-      "
-    >
-      <img src="scissors-emoji.png" class="move-icon" />
+    <button class="move-button" onclick="playGame('Scissors')">
+      <img src="assets/scissors-emoji.png" class="move-icon" />
     </button>
 
     <p class="outputResult"></p>
@@ -90,96 +36,12 @@
           localStorage.removeItem('score');
           outputScore();
         "
-      class ="reset-button"
+        class="reset-button"
       >
         Reset score
       </button>
     </p>
 
-    <script>
-      let score = JSON.parse(localStorage.getItem("score")); // string -> objekt (lesen)
-
-      if (!score) {
-        score = {
-          Win: 0,
-          Lose: 0,
-          Tie: 0,
-        };
-      }
-
-      const options = ["Rock", "Paper", "Scissors"];
-      let choose = "";
-
-      function pickComputerMove() {
-        choose = options[Math.floor(Math.random() * options.length)];
-
-        return choose;
-      }
-
-      let result = "";
-      let playerChoose = "";
-      function playGame(myChoose) {
-        pickComputerMove();
-        playerChoose = myChoose;
-        if (myChoose === "Scissors") {
-          if (choose === "Rock") {
-            result = "Lose";
-          } else if (choose === "Paper") {
-            result = "Win";
-          } else if (choose === "Scissors") {
-            result = "Tie";
-          }
-        } else if (myChoose === "Rock") {
-          if (choose === "Rock") {
-            result = "Tie";
-          } else if (choose === "Paper") {
-            result = "Lose";
-          } else if (choose === "Scissors") {
-            result = "Win";
-          }
-        } else if (myChoose === "Paper") {
-          if (choose === "Rock") {
-            result = "Win";
-          } else if (choose === "Paper") {
-            result = "Tie";
-          } else if (choose === "Scissors") {
-            result = "Lose";
-          }
-        }
-
-        if (result === "Win") {
-          score.Win++;
-        } else if (result === "Lose") {
-          score.Lose++;
-        } else {
-          score.Tie++;
-        }
-
-        localStorage.setItem("score", JSON.stringify(score)); // objekt -> string (speichern)
-
-        outputResult();
-        outputChoose();
-        outputScore();
-      }
-
-      function outputResult() {
-        document.querySelector(".outputResult").innerHTML = `
-         ${result}.`;
-      }
-
-      function outputChoose() {
-        document.querySelector(".outputChoose").innerHTML = `
-        You
-        <img src="${playerChoose}-emoji.png" class="move-icon">
-        <img src="${choose}-emoji.png" class="move-icon"> 
-        Computer `;
-      }
-
-      function outputScore() {
-        document.querySelector(".outputScore").innerHTML = `
-          Wins: ${score.Win}, Losses: ${score.Lose}, Tie: ${score.Tie}`;
-      }
-      outputScore();
-    </script>
+    <script src="script/rock-paper-scissors.js"></script>
   </body>
 </html>
