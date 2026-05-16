@@ -8,6 +8,7 @@
 
  
 **[→ Live Demo](http://89.167.40.206/rock-paper-scissors/)**
+</div>
 
  
 A browser-based Rock Paper Scissors game built with vanilla HTML, CSS and JavaScript.
