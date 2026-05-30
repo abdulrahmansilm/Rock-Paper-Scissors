@@ -7,7 +7,7 @@
 ![Self-hosted](https://img.shields.io/badge/self--hosted-FF6B00?style=flat-square)
 
  
-**[→ Live Demo](http://89.167.40.206/rock-paper-scissors/)**
+**[→ Live Demo](https://rps.silm.dev/)**
 </div>
 
  
